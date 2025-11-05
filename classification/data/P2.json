@@ -1,0 +1,22 @@
+{
+  "patient": {
+    "id": "P002",
+    "nom": "Durand",
+    "prenom": "Michel",
+    "date_naissance": "1972-02-03",
+    "sexe": "M",
+    "num_dossier": "CHU-2025-01870"
+  },
+  "intervention": {
+    "type": "Exérèse de kyste cutané",
+    "date": "2025-11-05",
+    "heure_prevue": "09:15",
+    "site_operatoire": "Région scapulaire gauche",
+    "chirurgien": "Dr. Bonnet",
+    "anesthesiste": null,
+    "iade": null,
+    "bloc": "Salle mineure"
+  },
+  "notes": "Acte sans anesthésie générale. Pas d'imagerie requise.",
+  "statut_checklist": "incomplète"
+}

@@ -1,0 +1,22 @@
+{
+  "patient": {
+    "id": "P001",
+    "nom": "Martin",
+    "prenom": "Claire",
+    "date_naissance": "1985-06-12",
+    "sexe": "F",
+    "num_dossier": "CHU-2025-01452"
+  },
+  "intervention": {
+    "type": "Appendicectomie",
+    "date": "2025-11-05",
+    "heure_prevue": "10:30",
+    "site_operatoire": "Fosse iliaque droite",
+    "chirurgien": "Dr. Lefèvre",
+    "anesthesiste": "Dr. Giraud",
+    "iade": "Mme Rousseau",
+    "bloc": "Salle 3"
+  },
+  "notes": "Aucune contre-indication signalée. Allergie : pénicilline.",
+  "statut_checklist": "validée"
+}
