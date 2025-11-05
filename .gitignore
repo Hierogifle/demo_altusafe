@@ -1,18 +1,2 @@
 # Environnement Python
 venv/
-*.pyc
-__pycache__/
-*.egg-info/
-.Python
-env/
-ENV/
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# OS
-.DS_Store
-Thumbs.db
