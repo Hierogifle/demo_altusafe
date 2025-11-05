@@ -15,14 +15,14 @@
     "pathologies": []
   },
   "operation": {
-    "id": "OPXXX",
-    "type_intervention": "type_chirurgie",
+    "id": "OP123456",
+    "type_intervention": "Arthroscopie du genou droit",
     "site_operatoire": "genou",
     "cote": "droit",
-    "date_prevue": "05-MM-DD",
+    "date_prevue": "2025-11-05",
     "urgence": false,
-    "chirurgien": "Dr. Nom Chirurgien",
-    "anesthesiste": "Dr. Nom Anesthesiste",
-    "infirmier_coordinateur": "Nom Infirmier"
+    "chirurgien": "Antoine Dupont",
+    "anesthesiste": "Idir Sahir",
+    "infirmier_coordinateur": "Melanie Martin"
   }
 }

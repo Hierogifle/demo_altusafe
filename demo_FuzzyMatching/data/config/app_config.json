@@ -1,0 +1,98 @@
+{
+  "app": {
+    "name": "Checklist Chirurgicale Vocale",
+    "version": "2.0",
+    "author": "Medical Team",
+    "description": "Application de validation vocale pour checklist chirurgicale",
+    "license": "MIT"
+  },
+  
+  "vosk": {
+    "model_path": "data/models/vosk-model-small-fr-0.22",
+    "sample_rate": 16000,
+    "blocksize": 4096,
+    "description": "Configuration Vosk - reconnaissance vocale offline"
+  },
+  
+  "audio": {
+    "listen_timeout": 10,
+    "listen_timeout_min": 5,
+    "listen_timeout_max": 30,
+    "enable_partial": true,
+    "show_partial_interval": 0.5,
+    "description": "Configuration audio - microphone et timeout"
+  },
+  
+  "validation": {
+    "fuzzy_threshold": 80,
+    "fuzzy_threshold_strict": 90,
+    "fuzzy_threshold_permissive": 70,
+    "keyword_min_default": 1,
+    "concept_min_default": 1,
+    "description": "Configuration validation - seuils de validation"
+  },
+  
+  "checklist": {
+    "template_file": "data/templates/checklist_template.json",
+    "vocabulary_file": "data/templates/medical_vocabulary.json",
+    "stop_on_first_failure": false,
+    "require_all_items": true,
+    "description": "Configuration checklist - fichiers et comportement"
+  },
+  
+  "files": {
+    "patient_file": "data/patients/P001.json",
+    "config_file": "data/config/app_config.json",
+    "validation_rules_file": "data/config/validation_rules.json",
+    "description": "Fichiers de configuration - chemins relatifs"
+  },
+  
+  "logging": {
+    "level": "INFO",
+    "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    "file": "logs/checklist.log",
+    "max_bytes": 10485760,
+    "backup_count": 5,
+    "description": "Configuration logging - niveau et format"
+  },
+  
+  "ui": {
+    "clear_screen": true,
+    "show_progress_bar": true,
+    "show_timing": true,
+    "colors": true,
+    "verbose": false,
+    "description": "Configuration interface utilisateur"
+  },
+  
+  "database": {
+    "enabled": false,
+    "type": "sqlite",
+    "path": "data/results.db",
+    "backup_enabled": true,
+    "description": "Configuration base de données (optionnel)"
+  },
+  
+  "performance": {
+    "cache_enabled": true,
+    "cache_ttl": 3600,
+    "thread_pool_size": 4,
+    "description": "Configuration performance - cache et threading"
+  },
+  
+  "security": {
+    "encrypt_patient_data": false,
+    "validate_input": true,
+    "sanitize_input": true,
+    "description": "Configuration sécurité - chiffrage et validation"
+  },
+  
+  "advanced": {
+    "debug_mode": false,
+    "profile_performance": false,
+    "test_mode": false,
+    "allow_retry_failed_items": true,
+    "max_retries": 3,
+    "description": "Configuration avancée - debug et mode test"
+  }
+}

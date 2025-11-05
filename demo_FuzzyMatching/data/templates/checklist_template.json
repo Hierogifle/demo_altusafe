@@ -1,0 +1,174 @@
+{
+  "nom": "Checklist Chirurgicale Complète",
+  "version": "2.0",
+  "description": "Template réutilisable pour checklist de validation avant opération",
+  "date_creation": "2025-11-05",
+  "nombre_items": 9,
+  
+  "items": [
+    {
+      "id": 1,
+      "numero_item": "1/9",
+      "question": "Quel est le nom du patient ?",
+      "type": "NOM",
+      "description": "Identification du patient par son nom",
+      "validation_type": "fuzzy_match",
+      "fuzzy_threshold": 80,
+      "hint": "Ex: marie dupont",
+      "required": true,
+      "timeout": 10,
+      "notes": "Vérifier exactitude identité contre dossier patient",
+      "expected_field": "patient.nom"
+    },
+    {
+      "id": 2,
+      "numero_item": "2/9",
+      "question": "Quel est le site opératoire ?",
+      "type": "LIEU",
+      "description": "Localisation anatomique de l'intervention",
+      "validation_type": "fuzzy_match",
+      "fuzzy_threshold": 80,
+      "hint": "Ex: genou gauche",
+      "required": true,
+      "timeout": 10,
+      "notes": "Vérifier coté et localisation contre intervention prévue",
+      "expected_field": "operation.site_operatoire"
+    },
+    {
+      "id": 3,
+      "numero_item": "3/9",
+      "question": "Quelle est l'intervention chirurgicale ?",
+      "type": "INTERVENTION",
+      "description": "Type d'acte opératoire à effectuer",
+      "validation_type": "fuzzy_match",
+      "fuzzy_threshold": 80,
+      "hint": "Ex: cholecystectomie",
+      "required": true,
+      "timeout": 10,
+      "notes": "Vérifier intervention correspond à dossier médical",
+      "expected_field": "operation.type_intervention"
+    },
+    {
+      "id": 4,
+      "numero_item": "4/9",
+      "question": "Installation correcte confirmée ?",
+      "type": "CONFIRMATION",
+      "description": "Vérification du positionnement patient correct",
+      "validation_type": "keyword_match",
+      "keywords": ["oui", "yes", "confirmé", "ok", "d'accord", "correct", "bien"],
+      "hint": "Dites oui si confirmé",
+      "required": true,
+      "timeout": 10,
+      "notes": "Installation ergonomique, confortable et correcte",
+      "expected_field": null
+    },
+    {
+      "id": 5,
+      "numero_item": "5/9",
+      "question": "Documents nécessaires disponibles ?",
+      "type": "DOCUMENTS",
+      "description": "Présence de tous les documents médicaux requis",
+      "validation_type": "keyword_match",
+      "keywords": ["oui", "yes", "confirmé", "ok", "présent", "complet"],
+      "hint": "Dites oui si présents",
+      "required": true,
+      "timeout": 10,
+      "notes": "Vérifier dossier patient complet (radiographies, analyses, etc.)",
+      "expected_field": null
+    },
+    {
+      "id": 6,
+      "numero_item": "6/9",
+      "question": "Partage des informations essentielles sur les éléments à risque et les étapes critiques ?",
+      "type": "RISQUES",
+      "description": "Communication des risques potentiels et étapes critiques de l'intervention",
+      "validation_type": "concept_detection",
+      "required_concepts": ["risques"],
+      "min_count": 1,
+      "hint": "Décrivez les risques et étapes critiques identifiés",
+      "required": true,
+      "timeout": 15,
+      "notes": "NLP avancé - détection concepts médicaux. Au moins 1 concept de risque doit être mentionné",
+      "expected_field": null,
+      "complexity": "high"
+    },
+    {
+      "id": 7,
+      "numero_item": "7/9",
+      "question": "Confirmation du plan chirurgical (temps opératoire, points spécifiques, identification des matériels nécessaires et confirmation de leur opérationnalité) ?",
+      "type": "PLAN_CHIRURGICAL",
+      "description": "Planification détaillée de l'acte chirurgical",
+      "validation_type": "keyword_detection",
+      "keywords": ["temps", "opératoire", "matériel", "instrument", "technique", "points", "difficile", "spécifique", "dissection"],
+      "min_keywords": 2,
+      "hint": "Décrivez le plan chirurgical (temps, matériels, techniques, points spécifiques)",
+      "required": true,
+      "timeout": 15,
+      "notes": "NLP avancé - détection mots-clés chirurgicaux. Au moins 2 termes chirurgicaux",
+      "expected_field": null,
+      "complexity": "high"
+    },
+    {
+      "id": 8,
+      "numero_item": "8/9",
+      "question": "Confirmation du plan d'anesthésie (risques potentiels liés au terrain, hypothermie, traitements éventuellement maintenus) ?",
+      "type": "PLAN_ANESTHESIE",
+      "description": "Plan anesthésique adapté au patient et aux risques",
+      "validation_type": "concept_detection",
+      "required_concepts": ["risques", "traitements"],
+      "min_count": 2,
+      "hint": "Décrivez plan anesthésique (risques, traitements maintenus, problèmes terrain)",
+      "required": true,
+      "timeout": 15,
+      "notes": "NLP avancé - Au minimum 2 concepts (risques + traitements) doivent être mentionnés",
+      "expected_field": null,
+      "complexity": "high"
+    },
+    {
+      "id": 9,
+      "numero_item": "9/9",
+      "question": "Acte sans prise en charge anesthésique ou antibioprophylaxie effectuée selon les protocoles en vigueur ?",
+      "type": "ANTIBIOPROPHYLAXIE",
+      "description": "Confirmation antibioprophylaxie selon protocole ou justification absence",
+      "validation_type": "keyword_detection",
+      "keywords": ["antibio", "prophylaxie", "protocole", "effectuée", "administrée", "sans", "anesthésie", "local"],
+      "min_keywords": 1,
+      "hint": "Confirmez antibioprophylaxie ou absence (si anesthésie locale)",
+      "required": true,
+      "timeout": 10,
+      "notes": "Au moins 1 mot-clé antibioprophylaxie ou mention absence",
+      "expected_field": null,
+      "complexity": "medium"
+    }
+  ],
+  
+  "regles_validation": {
+    "items_simples": {
+      "ids": [1, 2, 3, 4, 5],
+      "methode": "fuzzy_matching ou keyword_matching",
+      "seuil": 80,
+      "description": "Items 1-5 utilisent fuzzy matching ou keywords simples"
+    },
+    "items_complexes": {
+      "ids": [6, 7, 8, 9],
+      "methode": "NLP avancé (concept_detection ou keyword_detection)",
+      "seuil": "variable",
+      "description": "Items 6-9 utilisent NLP avancé pour concepts/mots-clés"
+    }
+  },
+  
+  "flux_validation": {
+    "avant_debut": "Vérifier données patient chargées correctement",
+    "durant": "Micro activé uniquement pendant question",
+    "apres": "Afficher score et résultat avant item suivant",
+    "fin": "Générer résumé avec taux réussite global"
+  },
+  
+  "affichage": {
+    "format_question": "❓ {question}",
+    "format_hint": "💡 {hint}",
+    "format_reponse": "✓ Reconnu: '{recognized}'",
+    "format_validation": "{status} ({score}%)",
+    "timeout_message": "⏱️  Timeout - Aucun texte reconnu"
+  }
+}

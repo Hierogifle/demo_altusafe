@@ -1,0 +1,237 @@
+{
+  "nom": "Règles de Validation",
+  "version": "1.0",
+  "description": "Règles spécifiques de validation pour items complexes",
+  "date_creation": "2025-11-05",
+  
+  "regles_globales": {
+    "case_insensitive": true,
+    "remove_accents": true,
+    "remove_punctuation": true,
+    "normalize_spaces": true,
+    "description": "Règles appliquées à tous les items"
+  },
+  
+  "items_complexes": {
+    "item_6": {
+      "numero": 6,
+      "type": "RISQUES",
+      "question": "Partage des informations essentielles sur les éléments à risque",
+      "validation_type": "concept_detection",
+      "required_concepts": ["risques"],
+      "min_concepts_required": 1,
+      "acceptable_concepts": [
+        "hypothermie", "allergie", "infection", "saignement",
+        "thrombose", "embolie", "choc", "complications"
+      ],
+      "score_calculation": "nombre_concepts_finds",
+      "pass_threshold": 1,
+      "rules": {
+        "accept_synonyms": true,
+        "accept_partial_words": false,
+        "require_context": false,
+        "weight_important_terms": false
+      },
+      "notes": "Au moins 1 concept de risque doit être verbalisé"
+    },
+    
+    "item_7": {
+      "numero": 7,
+      "type": "PLAN_CHIRURGICAL",
+      "question": "Confirmation du plan chirurgical",
+      "validation_type": "keyword_detection",
+      "required_keywords": [
+        "temps", "opératoire", "matériel", "instrument",
+        "technique", "points", "difficile", "spécifique"
+      ],
+      "min_keywords_required": 2,
+      "score_calculation": "nombre_keywords_finds",
+      "pass_threshold": 2,
+      "rules": {
+        "accept_synonyms": true,
+        "accept_partial_words": true,
+        "require_context": false,
+        "weight_important_terms": true,
+        "important_terms": ["technique", "points", "spécifique"]
+      },
+      "notes": "Au moins 2 termes chirurgicaux doivent être mentionnés"
+    },
+    
+    "item_8": {
+      "numero": 8,
+      "type": "PLAN_ANESTHESIE",
+      "question": "Confirmation du plan d'anesthésie",
+      "validation_type": "concept_detection",
+      "required_concepts": ["risques", "traitements"],
+      "min_concepts_required": 2,
+      "min_per_category": {
+        "risques": 1,
+        "traitements": 1
+      },
+      "acceptable_concepts": {
+        "risques": [
+          "hypothermie", "allergie", "infection", "hypotension",
+          "hypertension", "complications"
+        ],
+        "traitements": [
+          "insuline", "anticoagulant", "corticoïde", "antibiotique",
+          "antihypertenseur", "antidépresseur"
+        ]
+      },
+      "score_calculation": "nombre_concepts_finds",
+      "pass_threshold": 2,
+      "rules": {
+        "accept_synonyms": true,
+        "accept_partial_words": false,
+        "require_context": false,
+        "check_multiple_categories": true,
+        "weight_important_terms": true
+      },
+      "important_terms": {
+        "risques": ["hypothermie", "allergie"],
+        "traitements": ["insuline", "anticoagulant"]
+      },
+      "notes": "Au moins 1 risque + 1 traitement doivent être verbalisés"
+    },
+    
+    "item_9": {
+      "numero": 9,
+      "type": "ANTIBIOPROPHYLAXIE",
+      "question": "Antibioprophylaxie effectuée selon protocole",
+      "validation_type": "keyword_detection",
+      "required_keywords": [
+        "antibio", "prophylaxie", "protocole", "effectuée",
+        "administrée", "sans", "anesthésie", "local"
+      ],
+      "min_keywords_required": 1,
+      "score_calculation": "nombre_keywords_finds",
+      "pass_threshold": 1,
+      "rules": {
+        "accept_synonyms": true,
+        "accept_partial_words": true,
+        "require_context": false,
+        "weight_important_terms": true,
+        "important_terms": ["antibio", "effectuée", "sans"]
+      },
+      "notes": "Au minimum 1 mot-clé antibioprophylaxie ou mention absence"
+    }
+  },
+  
+  "synonymes_methodes": {
+    "fuzzy_matching": {
+      "methode": "Levenshtein distance (rapidfuzz)",
+      "seuil_defaut": 80,
+      "seuils_alternatifs": {
+        "strict": 90,
+        "permissive": 70
+      },
+      "cas_utilisation": "Items 1-3 et matchings exacts"
+    },
+    
+    "keyword_matching": {
+      "methode": "Substring matching avec normalisation",
+      "case_insensitive": true,
+      "remove_accents": true,
+      "cas_utilisation": "Items 4-5, 7, 9"
+    },
+    
+    "concept_detection": {
+      "methode": "Keyword matching dans concepts categories",
+      "case_insensitive": true,
+      "remove_accents": true,
+      "cas_utilisation": "Items 6, 8"
+    }
+  },
+  
+  "scoring_system": {
+    "item_1_5": {
+      "methode": "Fuzzy matching percentage",
+      "score_formula": "similarite_percentage",
+      "pass_score": 80
+    },
+    
+    "item_6_9": {
+      "methode": "Count-based scoring",
+      "score_formula": "nombre_elements_trouves / nombre_elements_requis",
+      "pass_score": ">= seuil minimum"
+    }
+  },
+  
+  "gestion_erreurs": {
+    "aucun_texte": {
+      "message": "Aucun texte reconnu",
+      "score": 0,
+      "action": "Retry ou skip"
+    },
+    
+    "score_insuffisant": {
+      "message": "Score trop faible",
+      "score": "< threshold",
+      "action": "Afficher score et passer suivant"
+    },
+    
+    "timeout": {
+      "message": "Timeout dépassé",
+      "duree": 10,
+      "action": "Marquer comme timeout"
+    }
+  },
+  
+  "tolerance": {
+    "typos_acceptes": true,
+    "accents_ignores": true,
+    "synonymes_acceptes": true,
+    "variations_acceptees": {
+      "pluriel_singulier": true,
+      "genre": false,
+      "abreviations": true
+    }
+  },
+  
+  "cas_speciaux": {
+    "genou_vs_genoux": {
+      "description": "Accepter singulier et pluriel",
+      "accepter": ["genou gauche", "genoux gauche", "genou g", "genou G"]
+    },
+    
+    "cholecystectomie_variantes": {
+      "description": "Accepter variantes chirurgicales",
+      "accepter": [
+        "cholecystectomie", "cholécystectomie", "chol",
+        "ablation vésicule", "ablation vesicule"
+      ]
+    },
+    
+    "abreviations_medicales": {
+      "description": "Accepter abréviations communes",
+      "accepter": {
+        "ta": "tension artérielle",
+        "rcp": "réunion de concertation pluridisciplinaire",
+        "vo": "voie orale",
+        "pm": "per os"
+      }
+    }
+  },
+  
+  "validation_temps_reel": {
+    "afficher_partial": true,
+    "interval_partial": 0.5,
+    "afficher_score_progressif": false,
+    "max_affichage_temps": 10
+  },
+  
+  "rapports": {
+    "generer_rapport": true,
+    "format_rapport": ["json", "txt", "pdf"],
+    "inclure_timestamps": true,
+    "inclure_scores": true,
+    "inclure_textes_reconnus": true
+  },
+  
+  "maintenance": {
+    "derniere_maj": "2025-11-05",
+    "responsable": "Equipe médicale",
+    "prochaine_revision": "2025-12-05",
+    "notes": "À réviser après premiers tests en production"
+  }
+}

@@ -1,0 +1,263 @@
+{
+  "nom": "Medical Vocabulary - Dictionnaire Termes Chirurgicaux",
+  "version": "1.0",
+  "description": "Vocabulaire médical français pour détection concepts et mots-clés",
+  "date_creation": "2025-11-05",
+  "langue": "fr-FR",
+  "specialite": "Chirurgie générale",
+  
+  "concepts": {
+    "risques": {
+      "description": "Risques potentiels et complications",
+      "termes": [
+        "hypothermie", "hypoxie", "hypotension", "hypertension",
+        "allergie", "anaphylaxie", "choc", "sepsis",
+        "infection", "saignement", "hémorragie",
+        "thrombose", "embolie", "douleur",
+        "nausée", "vomissement", "nausées",
+        "tachycardie", "arythmie", "bradycardie",
+        "insuffisance", "défaillance", "complication",
+        "fièvre", "désaturation", "arrêt cardiaque"
+      ]
+    },
+    
+    "anesthesie": {
+      "description": "Termes liés à l'anesthésie",
+      "termes": [
+        "anesthésie", "anesthésiant", "anesthésique",
+        "anesthésie générale", "anesthésie locale",
+        "anesthésie régionale", "rachianesthésie",
+        "monitoring", "monitoring cardiaque", "scope",
+        "capteur", "bloc opératoire", "bloc",
+        "endotrachéal", "intubation", "extubation",
+        "induction", "maintien", "réveil",
+        "apnée", "ventilation", "insufflation"
+      ]
+    },
+    
+    "traitements": {
+      "description": "Médicaments et traitements en cours",
+      "termes": [
+        "insuline", "glucose", "anticoagulant",
+        "anticoagulants", "aspirine", "antiplaquettaire",
+        "corticoïde", "corticostéroïde",
+        "antibiotique", "antibio",
+        "antidépresseur", "antidépresseurs",
+        "antihypertenseur", "bêtabloquant",
+        "inhibiteur", "inhibiteurs",
+        "antihistaminique", "antihistaminiques",
+        "benzodiazépine", "morphine", "opioides",
+        "bronchodilatateur", "diurétique"
+      ]
+    },
+    
+    "patient_state": {
+      "description": "État de santé et antécédents du patient",
+      "termes": [
+        "diabétique", "diabète", "type 1", "type 2",
+        "hypertension", "hypertendu", "hypertendus",
+        "cardiaque", "cardiaque", "insuffisance cardiaque",
+        "rénal", "insuffisance rénale", "rénale",
+        "hépatique", "insuffisance hépatique", "cirrhose",
+        "pulmonaire", "asthme", "BPCO",
+        "obésité", "obèse", "surpoids",
+        "grossesse", "enceinte", "allaitante",
+        "allergie", "allergies", "allergie connue",
+        "immunodéprimé", "immunosupprimé",
+        "anticoagulé", "thrombopénie", "anémie",
+        "insuffisance", "défaillance", "comorbidité"
+      ]
+    },
+    
+    "matériel": {
+      "description": "Matériel chirurgical et dispositifs",
+      "termes": [
+        "matériel", "matériel chirurgical",
+        "instrument", "instruments", "instrumentation",
+        "prothèse", "prothèses", "implant", "implants",
+        "dissecteur", "dissecteurs", "pince",
+        "pince", "pinces", "bistouri", "bisturis",
+        "suture", "sutures", "fil", "fils",
+        "drain", "drains", "drainage",
+        "écarteur", "écarteurs", "rétracteur",
+        "seringue", "seringues", "aiguille", "aiguilles",
+        "gaze", "gazes", "compresse", "compresses",
+        "patch", "patches", "pansement", "pansements",
+        "scanner", "IRM", "radiographie", "imagerie",
+        "endoscope", "microscope", "loupes",
+        "électrochirurgie", "cautère", "coagulation"
+      ]
+    },
+    
+    "techniques": {
+      "description": "Techniques chirurgicales et manœuvres",
+      "termes": [
+        "technique", "techniques", "approche",
+        "incision", "incisions", "plaie",
+        "dissection", "dissection douce", "décollement",
+        "points", "point de suture", "suturage",
+        "suture", "points de suture",
+        "ligature", "ligatures",
+        "hémostase", "hémostat", "coagulation",
+        "fermeture", "fermeture cutanée",
+        "réduction", "immobilisation", "stabilisation",
+        "greffe", "greffer", "allogreffe",
+        "endoscopie", "laparoscopie", "thoracoscopie",
+        "arthroscopie", "bronchoscopie",
+        "résection", "ablation", "exérèse",
+        "drainage", "lavage", "irrigation",
+        "biopsie", "biopsies", "prélèvement"
+      ]
+    },
+    
+    "complication": {
+      "description": "Complications possibles",
+      "termes": [
+        "complication", "complications",
+        "plaie opératoire", "infection de plaie",
+        "collection", "collections", "abcès",
+        "fistule", "fistules",
+        "sténose", "perforation",
+        "recidive", "récidive", "rechute",
+        "necroses", "nécrose", "gangrène",
+        "contracture", "raideur",
+        "syndrome de reperfusion",
+        "embolie pulmonaire", "phlébite",
+        "thrombose veineuse", "deep vein thrombosis"
+      ]
+    }
+  },
+  
+  "keywords": {
+    "confirmation": {
+      "description": "Mots indiquant confirmation/accord",
+      "termes": [
+        "oui", "yes", "confirmé", "confirmed",
+        "ok", "d'accord", "entendu",
+        "correct", "bien", "bon", "bonne",
+        "c'est juste", "c'est bon", "c'est correct",
+        "affirmatif", "ouais", "yep", "yup",
+        "effectuée", "effectué", "fait", "faite",
+        "complète", "complet", "complétion",
+        "administrée", "administré", "appliquée",
+        "vérifié", "vérifiée", "contrôlé"
+      ]
+    },
+    
+    "negation": {
+      "description": "Mots indiquant négation/refus",
+      "termes": [
+        "non", "no", "négatif",
+        "pas d'accord", "pas ok",
+        "négatif", "incorrect", "mal",
+        "mauvais", "mauvaise",
+        "pas fait", "pas effectué",
+        "oubli", "oubliée", "manquant",
+        "absent", "absente", "absent",
+        "n'a pas", "na pas", "n'existe pas"
+      ]
+    },
+    
+    "verification": {
+      "description": "Mots indiquant vérification/check",
+      "termes": [
+        "vérifié", "vérification", "vérifier",
+        "confirmé", "confirmation", "confirmer",
+        "contrôlé", "contrôle", "contrôler",
+        "checked", "check", "checkup",
+        "examiné", "examen", "examiner",
+        "testé", "test", "tester",
+        "validé", "validation", "valider"
+      ]
+    }
+  },
+  
+  "synonyms": {
+    "genou gauche": {
+      "variantes": ["genou g", "genoux gauche", "jambe gauche", "coté gauche"],
+      "priorite": 1
+    },
+    "genou droit": {
+      "variantes": ["genou d", "genoux droit", "jambe droite", "coté droit"],
+      "priorite": 1
+    },
+    "epaule droite": {
+      "variantes": ["épaule droite", "epaule d"],
+      "priorite": 1
+    },
+    "epaule gauche": {
+      "variantes": ["épaule gauche", "epaule g"],
+      "priorite": 1
+    },
+    "cholecystectomie": {
+      "variantes": ["chol", "cholécystectomie", "ablation vésicule", "ablation vesicule"],
+      "priorite": 1
+    },
+    "arthroplastie genou": {
+      "variantes": ["arthro", "arthro genou", "prothèse genou", "prothese genou"],
+      "priorite": 1
+    },
+    "appendicectomie": {
+      "variantes": ["appendice", "ablation appendice"],
+      "priorite": 1
+    },
+    "hypothermie": {
+      "variantes": ["hypotermie", "baisse temperature", "froid"],
+      "priorite": 2
+    },
+    "hypertension": {
+      "variantes": ["tension élevée", "TA élevée", "HTA"],
+      "priorite": 2
+    },
+    "insuline": {
+      "variantes": ["insulin", "antidiabétique"],
+      "priorite": 1
+    },
+    "anticoagulant": {
+      "variantes": ["anticoagulation", "anticoagulé", "fluidifiant"],
+      "priorite": 1
+    }
+  },
+  
+  "patterns": {
+    "date_format": "YYYY-MM-DD",
+    "case_sensitivity": false,
+    "accent_sensitivity": false,
+    "normalization": {
+      "lowercase": true,
+      "remove_accents": true,
+      "remove_punctuation": true,
+      "remove_extra_spaces": true
+    }
+  },
+  
+  "utilisation": {
+    "item_6": {
+      "concepts_utilises": ["risques"],
+      "description": "Détection risques potentiels"
+    },
+    "item_7": {
+      "concepts_utilises": ["matériel", "techniques"],
+      "keywords_utilises": ["verification"],
+      "description": "Validation plan chirurgical"
+    },
+    "item_8": {
+      "concepts_utilises": ["risques", "traitements", "anesthesie"],
+      "description": "Validation plan anesthésique"
+    },
+    "item_9": {
+      "keywords_utilises": ["confirmation"],
+      "concepts_utilises": ["traitements"],
+      "description": "Confirmation antibioprophylaxie"
+    }
+  },
+  
+  "metadata": {
+    "derniere_maj": "2025-11-05",
+    "responsable": "Equipe médicale",
+    "nombre_termes_total": 250,
+    "nombre_concepts": 7,
+    "nombre_keywords": 3,
+    "nombre_synonyms": 11
+  }
+}

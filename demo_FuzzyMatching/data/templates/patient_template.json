@@ -1,0 +1,27 @@
+{
+  "id": "PXXX",
+  "nom": "nom_patient",
+  "prenom": "prenom_patient",
+  "date_naissance": "YYYY-MM-DD",
+  "numero_dpi": "000000000",
+  "contact": {
+    "telephone": "+33 X XX XX XX XX",
+    "email": "email@example.com"
+  },
+  "antecedents_medicaux": {
+    "allergies": [],
+    "traitements": [],
+    "pathologies": []
+  },
+  "operation": {
+    "id": "OPXXX",
+    "type_intervention": "type_chirurgie",
+    "site_operatoire": "site_anatomique",
+    "cote": "gauche|droit|bilateral|na",
+    "date_prevue": "YYYY-MM-DD",
+    "urgence": false,
+    "chirurgien": "Nom Chirurgien",
+    "anesthesiste": "Nom Anesthesiste",
+    "infirmier_coordinateur": "Nom Infirmier"
+  }
+}

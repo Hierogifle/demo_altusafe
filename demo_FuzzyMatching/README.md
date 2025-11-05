@@ -28,7 +28,7 @@ projet_checklist/
 │   ├── io/                      ← Input/Output
 │   └── ui/                      ← Interface utilisateur
 ├── tests/                       ← Tests unitaires
-└── .env/                        ← Environnement Python
+└── venv/                        ← Environnement Python
 ```
 
 ## 📥 Installation Rapide
