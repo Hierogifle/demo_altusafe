@@ -113,7 +113,7 @@ def confirm_item(recognizer: SpeechRecognizer, prompt_text: str, expected: str |
             # do not advance: loop again until OK or 'terminé'
 
 
-def validate_fiche(fiche_path: str, model_path: str = "vosk-model-fr-0.22/vosk-model-fr-0.22"):
+def validate_fiche(fiche_path: str, model_path: str = "/vosk-model-fr-0.22"):
     if not os.path.exists(fiche_path):
         raise FileNotFoundError(f"Fiche not found: {fiche_path}")
 
@@ -123,11 +123,26 @@ def validate_fiche(fiche_path: str, model_path: str = "vosk-model-fr-0.22/vosk-m
     results = {}
     # try to initialize MatchEngine (optional). If it fails (no TF/tflite), we'll fallback to difflib.
     me = None
-    try:
-        me = MatchEngine()
-        print("MatchEngine loaded successfully - using semantic matching for confirmations.")
-    except Exception as e:
-        print("MatchEngine unavailable, falling back to simple string similarity:", e)
+
+    # Check same folder (final) for encoder and vocab and notify (delete later)
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    tflite_path = os.path.join(script_dir, "encoder_embed.tflite")
+    vocab_path = os.path.join(script_dir, "char_vocab_embed.txt")
+
+    if os.path.exists(tflite_path) and os.path.exists(vocab_path):
+        print(f"Found encoder and vocab in final folder: {script_dir} — will try to load them")
+        try:
+            me = MatchEngine(tflite_path=tflite_path, vocab_path=vocab_path)
+            print("MatchEngine loaded successfully with provided encoder + vocab (final folder)")
+        except Exception as e:
+            print("Failed to initialize MatchEngine with final folder files, falling back:", e)
+    else:
+        print("encoder_embed.tflite and/or char_vocab_embed.txt not found in final folder; will try default MatchEngine init")
+        try:
+            me = MatchEngine()
+            print("MatchEngine loaded successfully with default paths")
+        except Exception as e:
+            print("MatchEngine unavailable, falling back to simple string similarity:", e)
 
     with SpeechRecognizer(model_path=model_path) as sr:
         for path, value in iter_fields(fiche):
@@ -155,7 +170,7 @@ def validate_fiche(fiche_path: str, model_path: str = "vosk-model-fr-0.22/vosk-m
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("fiche", nargs="?", default="data/fiches/P1.json", help="Chemin du fichier fiche JSON à valider")
-    p.add_argument("--model", default="vosk-model-fr-0.22/vosk-model-fr-0.22", help="Chemin du modèle Vosk")
+    p.add_argument("--model", default="vosk-model-fr-0.22", help="Chemin du modèle Vosk")
     args = p.parse_args()
 
     validate_fiche(args.fiche, model_path=args.model)

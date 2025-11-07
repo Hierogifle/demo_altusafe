@@ -1,27 +1,18 @@
 {
   "patient": {
-    "id": "P003",
-    "nom": "Nguyen",
-    "prenom": "Thierry",
-    "date_naissance": "1960-11-27",
-    "sexe": "M",
-    "num_dossier": "CHU-2025-01901"
-  },
-  "intervention": {
-    "type": "Remplacement de valve mitrale",
-    "date": "2025-11-05",
-    "heure_prevue": "14:00",
-    "site_operatoire": "Thorax",
-    "chirurgien": "Dr. Marchand",
-    "anesthesiste": "Dr. Cohen",
-    "iade": "Mme Petit",
-    "bloc": "Salle 1"
-  },
-  "risques": [
-    "Temps opératoire long",
-    "Hypothermie possible",
-    "Allergie connue : latex"
-  ],
-  "notes": "Patient sous anticoagulants. Surveillance accrue.",
-  "statut_checklist": "validée"
+      "civilite": "monsieur",
+      "prenom": "george",
+      "nom": "sanjoge",
+      "date_naissance": "23 mars mille neuf cent quatre-vingt-cinq"
+    },
+    "intervention": {
+      "date": "vingt-cinq octobre deux mille vingt-cinq",
+      "heure_prevue": "quatorze heures",
+      "type": "embolisation de la prostate",
+      "site_operatoire": "prostate",
+      "salle": "salle quatre",
+      "chirurgien": "docteur leroy",
+      "anesthesiste": "docteur robert",
+      "remarques": "abord femoral droit quatre french, micro catheter sniper deux virgule sept"
+    }
 }

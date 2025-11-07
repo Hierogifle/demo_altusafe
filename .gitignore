@@ -1,6 +1,6 @@
 # Environnement Python
 venv/
-src/__pycache__/
+*/__pycache__/
 */vosk-small-fr/
-*model/
+*/model/
 */vosk-model-fr-0.22/

@@ -1,22 +1,18 @@
 {
   "patient": {
-    "id": "P002",
-    "nom": "Durand",
-    "prenom": "Michel",
-    "date_naissance": "1972-02-03",
-    "sexe": "M",
-    "num_dossier": "CHU-2025-01870"
-  },
-  "intervention": {
-    "type": "Exérèse de kyste cutané",
-    "date": "2025-11-05",
-    "heure_prevue": "09:15",
-    "site_operatoire": "Région scapulaire gauche",
-    "chirurgien": "Dr. Bonnet",
-    "anesthesiste": null,
-    "iade": null,
-    "bloc": "Salle mineure"
-  },
-  "notes": "Acte sans anesthésie générale. Pas d'imagerie requise.",
-  "statut_checklist": "incomplète"
+      "civilite": "madame",
+      "prenom": "marie",
+      "nom": "claire",
+      "date_naissance": "deux février mille neuf cent quatre-vingt-dix"
+    },
+    "intervention": {
+      "date": "vingt-quatre octobre deux mille vingt-cinq",
+      "heure_prevue": "neuf heures",
+      "type": "embolisation veineuse pelvienne avec onyx",
+      "site_operatoire": "veine gonadique gauche",
+      "salle": "salle deux",
+      "chirurgien": "docteur marchand",
+      "anesthesiste": "docteur cohen",
+      "remarques": "abord cinq french, micro cathéter quatre tru select"
+    }
 }

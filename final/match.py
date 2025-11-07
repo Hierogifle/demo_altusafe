@@ -47,6 +47,12 @@ class MatchEngine:
 		self.tok2id = {t: i for i, t in enumerate(self.vocab)}
 		self.UNK = self.tok2id.get("[UNK]", 1)
 
+		# Notify that vocab was loaded and how many tokens (delete later)
+		try:
+			print(f"MatchEngine: loaded vocab from '{self.vocab_path}' ({len(self.vocab)} tokens)")
+		except Exception:
+			print(f"MatchEngine: loaded vocab from '{self.vocab_path}'")
+
 		# load tflite interpreter
 		if tf is None:
 			raise ImportError("TensorFlow is required for MatchEngine (tflite interpreter). Install tensorflow.")
@@ -58,6 +64,12 @@ class MatchEngine:
 		self.interpreter.allocate_tensors()
 		self._in = self.interpreter.get_input_details()
 		self._out = self.interpreter.get_output_details()
+
+		# Notify that the TFLite model was loaded (delete later)
+		print(f"MatchEngine: loaded TFLite model from '{self.tflite_path}'")
+
+		# mark engine ready
+		self.ready = True
 
 	# ------------------------- text helpers -------------------------
 	@staticmethod
@@ -158,6 +170,8 @@ class MatchEngine:
 		return "OK" if score >= ok else ("INCERTAIN" if score >= maybe else "KO")
 
 	def match_utterance_to_candidates(self, utterance: str, candidates: List[str], require_overlap_for_names: bool = True) -> List[Tuple[str, float, str, str, float, float]]:
+		# Notify usage (delete later)
+		print(f"MatchEngine: matching utterance (ready={getattr(self, 'ready', False)}) against {len(candidates)} candidates")
 		results = []
 		for c in candidates:
 			tokens = self.norm(c).split()
