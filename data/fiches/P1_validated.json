@@ -1,0 +1,382 @@
+{
+  "fiche": {
+    "patient": {
+      "id": "bruce",
+      "nom": "Martin",
+      "prenom": "Claire",
+      "date_naissance": "douze juin mille neuf cent quatre-vingt-cinq",
+      "sexe": "Femme",
+      "num_dossier": "C H U - deux mille vingt-cinq - zéro un quatre cinq deux"
+    },
+    "intervention": {
+      "type": "Appendicectomie",
+      "date": "cinq novembre deux mille vingt-cinq",
+      "heure_prevue": "dix heures trente",
+      "site_operatoire": "Fosse iliaque droite",
+      "chirurgien": "Docteur Lefèvre",
+      "anesthesiste": "Docteur Giraud",
+      "iade": "Madame Rousseau",
+      "bloc": "Salle trois"
+    },
+    "notes": "Aucune contre-indication signalée. Allergie : pénicilline.",
+    "statut_checklist": "validée"
+  },
+  "validation": {
+    "patient.id": {
+      "expected": "bruce",
+      "status": "information validé",
+      "attempts": [
+        {
+          "recognized": "bruce",
+          "normalized": "bruce",
+          "best_expected": "bruce",
+          "score": 1.0,
+          "decision": "OK"
+        }
+      ]
+    },
+    "patient.nom": {
+      "expected": "Martin",
+      "status": "information validé",
+      "attempts": [
+        {
+          "recognized": "martin",
+          "normalized": "martin",
+          "best_expected": "Martin",
+          "score": 1.0,
+          "decision": "OK"
+        }
+      ]
+    },
+    "patient.prenom": {
+      "expected": "Claire",
+      "status": "information validé",
+      "attempts": [
+        {
+          "recognized": "claire",
+          "normalized": "claire",
+          "best_expected": "Claire",
+          "score": 1.0,
+          "decision": "OK"
+        }
+      ]
+    },
+    "patient.date_naissance": {
+      "expected": "douze juin mille neuf cent quatre-vingt-cinq",
+      "status": "information validé",
+      "attempts": [
+        {
+          "recognized": "douze juin mille neuf cent quatre-vingts",
+          "normalized": "douze juin mille neuf cent quatre vingts",
+          "best_expected": "douze juin mille neuf cent quatre-vingt-cinq",
+          "score": 0.9183204055255217,
+          "decision": "OK"
+        }
+      ]
+    },
+    "patient.sexe": {
+      "expected": "Femme",
+      "status": "information validé",
+      "attempts": [
+        {
+          "recognized": "cinq",
+          "normalized": "cinq",
+          "best_expected": "Femme",
+          "score": 0.43625239133834837,
+          "decision": "KO"
+        },
+        {
+          "recognized": "fin",
+          "normalized": "fin",
+          "best_expected": "Femme",
+          "score": 0.44276522397994994,
+          "decision": "KO"
+        },
+        {
+          "recognized": "femme",
+          "normalized": "femme",
+          "best_expected": "Femme",
+          "score": 1.0,
+          "decision": "OK"
+        }
+      ]
+    },
+    "patient.num_dossier": {
+      "expected": "C H U - deux mille vingt-cinq - zéro un quatre cinq deux",
+      "status": "information validé",
+      "attempts": [
+        {
+          "recognized": "c h u deux mille vingt cinq",
+          "normalized": "c h u deux mille vingt cinq",
+          "best_expected": "C H U - deux mille vingt-cinq - zéro un quatre cinq deux",
+          "score": 0.7985339878749774,
+          "decision": "INCERTAIN"
+        },
+        {
+          "recognized": "zéro un",
+          "normalized": "zero un",
+          "best_expected": "C H U - deux mille vingt-cinq - zéro un quatre cinq deux",
+          "score": 0.1738191598786783,
+          "decision": "KO"
+        },
+        {
+          "recognized": "c'est un chœur deux mille vingt cinq zéro un quatre cinq deux",
+          "normalized": "c est un chœur deux mille vingt cinq zero un quatre cinq deux",
+          "best_expected": "C H U - deux mille vingt-cinq - zéro un quatre cinq deux",
+          "score": 0.8871138624808275,
+          "decision": "OK"
+        }
+      ]
+    },
+    "intervention.type": {
+      "expected": "Appendicectomie",
+      "status": "information validé",
+      "attempts": [
+        {
+          "recognized": "",
+          "normalized": "",
+          "best_expected": "Appendicectomie",
+          "score": -0.40054242014884944,
+          "decision": "KO"
+        },
+        {
+          "recognized": "a peine sec tommy",
+          "normalized": "a peine sec tommy",
+          "best_expected": "Appendicectomie",
+          "score": 0.44041829109191893,
+          "decision": "KO"
+        },
+        {
+          "recognized": "appendice et tommy",
+          "normalized": "appendice et tommy",
+          "best_expected": "Appendicectomie",
+          "score": 0.7123790385411388,
+          "decision": "INCERTAIN"
+        },
+        {
+          "recognized": "appendicite tommy",
+          "normalized": "appendicite tommy",
+          "best_expected": "Appendicectomie",
+          "score": 0.44061159786022674,
+          "decision": "KO"
+        },
+        {
+          "recognized": "appendice",
+          "normalized": "appendice",
+          "best_expected": "Appendicectomie",
+          "score": 0.8893886671828664,
+          "decision": "OK"
+        }
+      ]
+    },
+    "intervention.date": {
+      "expected": "cinq novembre deux mille vingt-cinq",
+      "status": "information validé",
+      "attempts": [
+        {
+          "recognized": "des sex toys",
+          "normalized": "des sex toys",
+          "best_expected": "cinq novembre deux mille vingt-cinq",
+          "score": 0.5516686007240619,
+          "decision": "KO"
+        },
+        {
+          "recognized": "cinq novembre deux mille vingt cinq",
+          "normalized": "cinq novembre deux mille vingt cinq",
+          "best_expected": "cinq novembre deux mille vingt-cinq",
+          "score": 0.9643622457697547,
+          "decision": "OK"
+        }
+      ]
+    },
+    "intervention.heure_prevue": {
+      "expected": "dix heures trente",
+      "status": "information validé",
+      "attempts": [
+        {
+          "recognized": "dix heures trente",
+          "normalized": "dix heures trente",
+          "best_expected": "dix heures trente",
+          "score": 1.0000000834465026,
+          "decision": "OK"
+        }
+      ]
+    },
+    "intervention.site_operatoire": {
+      "expected": "Fosse iliaque droite",
+      "status": "information validé",
+      "attempts": [
+        {
+          "recognized": "fosse iliaque droite",
+          "normalized": "fosse iliaque droite",
+          "best_expected": "Fosse iliaque droite",
+          "score": 0.9999999582767487,
+          "decision": "OK"
+        }
+      ]
+    },
+    "intervention.chirurgien": {
+      "expected": "Docteur Lefèvre",
+      "status": "information validé",
+      "attempts": [
+        {
+          "recognized": "dr lefebvre",
+          "normalized": "dr lefebvre",
+          "best_expected": "Docteur Lefèvre",
+          "score": 0.7570444553787269,
+          "decision": "INCERTAIN"
+        },
+        {
+          "recognized": "l'anesthésiste sera docteur giraud",
+          "normalized": "l anesthesiste sera docteur giraud",
+          "best_expected": "Docteur Lefèvre",
+          "score": 0.7914006337984298,
+          "decision": "INCERTAIN"
+        },
+        {
+          "recognized": "",
+          "normalized": "",
+          "best_expected": "Docteur Lefèvre",
+          "score": -0.22131650149822232,
+          "decision": "KO"
+        },
+        {
+          "recognized": "",
+          "normalized": "",
+          "best_expected": "Docteur Lefèvre",
+          "score": -0.22131650149822232,
+          "decision": "KO"
+        },
+        {
+          "recognized": "docteur lefebvre",
+          "normalized": "docteur lefebvre",
+          "best_expected": "Docteur Lefèvre",
+          "score": 0.9023327172536096,
+          "decision": "OK"
+        }
+      ]
+    },
+    "intervention.anesthesiste": {
+      "expected": "Docteur Giraud",
+      "status": "information validé",
+      "attempts": [
+        {
+          "recognized": "l'anesthésiste sera docteur giraud",
+          "normalized": "l anesthesiste sera docteur giraud",
+          "best_expected": "Docteur Giraud",
+          "score": 1.0000000834465026,
+          "decision": "OK"
+        }
+      ]
+    },
+    "intervention.iade": {
+      "expected": "Madame Rousseau",
+      "status": "information validé",
+      "attempts": [
+        {
+          "recognized": "on sera avec mme rousseau",
+          "normalized": "on sera avec mme rousseau",
+          "best_expected": "Madame Rousseau",
+          "score": 0.9148380296427923,
+          "decision": "OK"
+        }
+      ]
+    },
+    "intervention.bloc": {
+      "expected": "Salle trois",
+      "status": "information validé",
+      "attempts": [
+        {
+          "recognized": "on est dans le bloc trois",
+          "normalized": "on est dans le bloc trois",
+          "best_expected": "Salle trois",
+          "score": 0.7404552690346644,
+          "decision": "INCERTAIN"
+        },
+        {
+          "recognized": "on est dans la salle trois",
+          "normalized": "on est dans la salle trois",
+          "best_expected": "Salle trois",
+          "score": 1.0,
+          "decision": "OK"
+        }
+      ]
+    },
+    "notes": {
+      "expected": "Aucune contre-indication signalée. Allergie : pénicilline.",
+      "status": "interrompu",
+      "attempts": [
+        {
+          "recognized": "aucune contre-indication signalée elle est",
+          "normalized": "aucune contre indication signalee elle est",
+          "best_expected": "Aucune contre-indication signalée. Allergie : pénicilline.",
+          "score": 0.8651648792186823,
+          "decision": "INCERTAIN"
+        },
+        {
+          "recognized": "allergique à la pénicilline",
+          "normalized": "allergique a la penicilline",
+          "best_expected": "Aucune contre-indication signalée. Allergie : pénicilline.",
+          "score": 0.6662343323230743,
+          "decision": "KO"
+        },
+        {
+          "recognized": "aucune contre-indication signaler elle est allergique à la paix",
+          "normalized": "aucune contre indication signaler elle est allergique a la paix",
+          "best_expected": "Aucune contre-indication signalée. Allergie : pénicilline.",
+          "score": 0.8326120716649771,
+          "decision": "INCERTAIN"
+        },
+        {
+          "recognized": "céline",
+          "normalized": "celine",
+          "best_expected": "Aucune contre-indication signalée. Allergie : pénicilline.",
+          "score": 0.6358817223005653,
+          "decision": "KO"
+        },
+        {
+          "recognized": "aucune contre-indication signe",
+          "normalized": "aucune contre indication signe",
+          "best_expected": "Aucune contre-indication signalée. Allergie : pénicilline.",
+          "score": 0.8126593165942146,
+          "decision": "INCERTAIN"
+        },
+        {
+          "recognized": "mais elle est allergique à la pénicilline",
+          "normalized": "mais elle est allergique a la penicilline",
+          "best_expected": "Aucune contre-indication signalée. Allergie : pénicilline.",
+          "score": 0.785705869854771,
+          "decision": "INCERTAIN"
+        },
+        {
+          "recognized": "",
+          "normalized": "",
+          "best_expected": "Aucune contre-indication signalée. Allergie : pénicilline.",
+          "score": 0.6247643828392029,
+          "decision": "KO"
+        },
+        {
+          "recognized": "aucune contre-indication signaler allergie pénicilline",
+          "normalized": "aucune contre indication signaler allergie penicilline",
+          "best_expected": "Aucune contre-indication signalée. Allergie : pénicilline.",
+          "score": 0.8490073241553444,
+          "decision": "INCERTAIN"
+        },
+        {
+          "recognized": "",
+          "normalized": "",
+          "best_expected": "Aucune contre-indication signalée. Allergie : pénicilline.",
+          "score": 0.6247643828392029,
+          "decision": "KO"
+        },
+        {
+          "recognized": "stop",
+          "normalized": "stop",
+          "best_expected": "Aucune contre-indication signalée. Allergie : pénicilline.",
+          "score": 0.3544941365718841,
+          "decision": "KO"
+        }
+      ]
+    }
+  }
+}

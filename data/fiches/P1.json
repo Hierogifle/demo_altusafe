@@ -1,22 +1,22 @@
 {
   "patient": {
-    "id": "P001",
+    "id": "bruce",
     "nom": "Martin",
     "prenom": "Claire",
-    "date_naissance": "1985-06-12",
-    "sexe": "F",
-    "num_dossier": "CHU-2025-01452"
+    "date_naissance": "douze juin mille neuf cent quatre-vingt-cinq",
+    "sexe": "Femme",
+    "num_dossier": "C H U - deux mille vingt-cinq - zéro un quatre cinq deux"
   },
   "intervention": {
     "type": "Appendicectomie",
-    "date": "2025-11-05",
-    "heure_prevue": "10:30",
+    "date": "cinq novembre deux mille vingt-cinq",
+    "heure_prevue": "dix heures trente",
     "site_operatoire": "Fosse iliaque droite",
-    "chirurgien": "Dr. Lefèvre",
-    "anesthesiste": "Dr. Giraud",
-    "iade": "Mme Rousseau",
-    "bloc": "Salle 3"
+    "chirurgien": "Docteur Lefèvre",
+    "anesthesiste": "Docteur Giraud",
+    "iade": "Madame Rousseau",
+    "bloc": "Salle trois"
   },
-  "notes": "Aucune contre-indication signalée. Allergie : pénicilline.",
-  "statut_checklist": "validée"
+  "notes": "Aucune contre-indication signalée.",
+  "Allergie": "pénicilline"
 }
