@@ -1,0 +1,212 @@
+{
+  "fiche": {
+    "patient": {
+      "nom": "Maurice jean",
+      "date_naissance": "18 janvier mille neuf cent soixante-dix"
+    },
+    "intervention": {
+      "date": "vingt-trois octobre deux mille vingt-cinq",
+      "heure_prevue": "dix heures trente",
+      "type": "thermo ablation par micro ondes d une metastase hepatique d origine renale",
+      "site_operatoire": "foie segment sept par voie sous xiphoidienne",
+      "salle": "salle trois",
+      "chirurgien": "docteur lefevre",
+      "anesthesiste": "docteur bernard",
+      "remarques": "aiguille unique quatorze centimetres, puissance cent watts pendant six minutes"
+    }
+  },
+  "validation": {
+    "patient.nom": {
+      "expected": "Maurice jean",
+      "expected_canon": "maurice jean",
+      "used_match_engine": true,
+      "status": "information validé",
+      "attempts": [
+        {
+          "recognized": "",
+          "normalized": "",
+          "best_expected": "Maurice jean",
+          "best_expected_canon": "maurice jean",
+          "score": -0.026380151510238647,
+          "decision": "KO"
+        },
+        {
+          "recognized": "",
+          "normalized": "",
+          "best_expected": "Maurice jean",
+          "best_expected_canon": "maurice jean",
+          "score": -0.026380151510238647,
+          "decision": "KO"
+        },
+        {
+          "recognized": "",
+          "normalized": "",
+          "best_expected": "Maurice jean",
+          "best_expected_canon": "maurice jean",
+          "score": -0.026380151510238647,
+          "decision": "KO"
+        },
+        {
+          "recognized": "le patient est monsieur jean-maurice",
+          "normalized": "le patient est monsieur jean maurice",
+          "best_expected": "Maurice jean",
+          "best_expected_canon": "maurice jean",
+          "score": 0.3776937910795318,
+          "decision": "KO"
+        },
+        {
+          "recognized": "",
+          "normalized": "",
+          "best_expected": "Maurice jean",
+          "best_expected_canon": "maurice jean",
+          "score": -0.026380151510238647,
+          "decision": "KO"
+        },
+        {
+          "recognized": "le patient est monsieur maurice jean",
+          "normalized": "le patient est monsieur maurice jean",
+          "best_expected": "Maurice jean",
+          "best_expected_canon": "maurice jean",
+          "score": 1.0,
+          "decision": "OK"
+        }
+      ]
+    },
+    "patient.date_naissance": {
+      "expected": "18 janvier mille neuf cent soixante-dix",
+      "expected_canon": "18 janvier mille neuf cent soixante-dix",
+      "used_match_engine": true,
+      "status": "information validé",
+      "attempts": [
+        {
+          "recognized": "non ça va",
+          "normalized": "non ca va",
+          "best_expected": "18 janvier mille neuf cent soixante-dix",
+          "best_expected_canon": "18 janvier mille neuf cent soixante-dix",
+          "score": -0.10014238506555556,
+          "decision": "KO"
+        },
+        {
+          "recognized": "il est né le dix huit janvier mille neuf cent soixante-dix",
+          "normalized": "il est ne le dix huit janvier mille neuf cent soixante dix",
+          "best_expected": "18 janvier mille neuf cent soixante-dix",
+          "best_expected_canon": "18 janvier mille neuf cent soixante-dix",
+          "score": 0.9592548622730142,
+          "decision": "OK"
+        }
+      ]
+    },
+    "intervention.date": {
+      "expected": "vingt-trois octobre deux mille vingt-cinq",
+      "expected_canon": "vingt-trois octobre deux mille vingt-cinq",
+      "used_match_engine": true,
+      "status": "information validé",
+      "attempts": [
+        {
+          "recognized": "",
+          "normalized": "",
+          "best_expected": "vingt-trois octobre deux mille vingt-cinq",
+          "best_expected_canon": "vingt-trois octobre deux mille vingt-cinq",
+          "score": -0.14929996877908705,
+          "decision": "KO"
+        },
+        {
+          "recognized": "",
+          "normalized": "",
+          "best_expected": "vingt-trois octobre deux mille vingt-cinq",
+          "best_expected_canon": "vingt-trois octobre deux mille vingt-cinq",
+          "score": -0.14929996877908705,
+          "decision": "KO"
+        },
+        {
+          "recognized": "l'opération se déroule à dix heures trente",
+          "normalized": "l operation se deroule a dix heures trente",
+          "best_expected": "vingt-trois octobre deux mille vingt-cinq",
+          "best_expected_canon": "vingt-trois octobre deux mille vingt-cinq",
+          "score": 0.500782997977166,
+          "decision": "KO"
+        },
+        {
+          "recognized": "",
+          "normalized": "",
+          "best_expected": "vingt-trois octobre deux mille vingt-cinq",
+          "best_expected_canon": "vingt-trois octobre deux mille vingt-cinq",
+          "score": -0.14929996877908705,
+          "decision": "KO"
+        },
+        {
+          "recognized": "il est né le vingt trois octobre deux mille vingt cinq",
+          "normalized": "il est ne le vingt trois octobre deux mille vingt cinq",
+          "best_expected": "vingt-trois octobre deux mille vingt-cinq",
+          "best_expected_canon": "vingt-trois octobre deux mille vingt-cinq",
+          "score": 0.9050898089032504,
+          "decision": "OK"
+        }
+      ]
+    },
+    "intervention.heure_prevue": {
+      "expected": "dix heures trente",
+      "expected_canon": "dix heure trente",
+      "used_match_engine": true,
+      "status": "information validé",
+      "attempts": [
+        {
+          "recognized": "l'opération se déroule à",
+          "normalized": "l operation se deroule a",
+          "best_expected": "dix heures trente",
+          "best_expected_canon": "dix heure trente",
+          "score": 0.21023660004138944,
+          "decision": "KO"
+        },
+        {
+          "recognized": "les heures trente",
+          "normalized": "les heures trente",
+          "best_expected": "dix heures trente",
+          "best_expected_canon": "dix heure trente",
+          "score": 0.6493804108014397,
+          "decision": "KO"
+        },
+        {
+          "recognized": "l'opération se déroule à dix heures trente",
+          "normalized": "l operation se deroule a dix heures trente",
+          "best_expected": "dix heures trente",
+          "best_expected_canon": "dix heure trente",
+          "score": 1.0,
+          "decision": "OK"
+        }
+      ]
+    },
+    "intervention.type": {
+      "expected": "thermo ablation par micro ondes d une metastase hepatique d origine renale",
+      "expected_canon": "thermo ablation par micro ondes d une metastase hepatique d origine renale",
+      "used_match_engine": true,
+      "status": "interrompu",
+      "attempts": [
+        {
+          "recognized": "ce soir-là",
+          "normalized": "ce soir la",
+          "best_expected": "thermo ablation par micro ondes d une metastase hepatique d origine renale",
+          "best_expected_canon": "thermo ablation par micro ondes d une metastase hepatique d origine renale",
+          "score": -0.16166719943284988,
+          "decision": "KO"
+        },
+        {
+          "recognized": "nick ça marche",
+          "normalized": "nick ca marche",
+          "best_expected": "thermo ablation par micro ondes d une metastase hepatique d origine renale",
+          "best_expected_canon": "thermo ablation par micro ondes d une metastase hepatique d origine renale",
+          "score": 0.04185006394982338,
+          "decision": "KO"
+        },
+        {
+          "recognized": "est né",
+          "normalized": "est ne",
+          "best_expected": "thermo ablation par micro ondes d une metastase hepatique d origine renale",
+          "best_expected_canon": "thermo ablation par micro ondes d une metastase hepatique d origine renale",
+          "score": -0.1616970010271927,
+          "decision": "KO"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{"patient": {
+      "nom": "Maurice jean",
+      "date_naissance": "18 janvier mille neuf cent soixante-dix"
+    },
+    "intervention": {
+      "date": "vingt-trois octobre deux mille vingt-cinq",
+      "heure_prevue": "dix heures trente",
+      "type": "thermo ablation par micro ondes d une metastase hepatique d origine renale",
+      "site_operatoire": "foie segment sept par voie sous xiphoidienne",
+      "salle": "salle trois",
+      "chirurgien": "docteur lefevre",
+      "anesthesiste": "docteur bernard",
+      "remarques": "aiguille unique quatorze centimetres, puissance cent watts pendant six minutes"
+    }
+  }
